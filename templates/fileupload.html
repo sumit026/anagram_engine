@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Upload list of words - Anagram Engine</title>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/styles.css"/>
+</head>
+
+<body>
+<div class="header">
+	<div class="left-box">
+		<div class="title">Anagram Engine</div>
+	</div>
+	<div class="right-box">
+		<div class="logout-upper-text">You are logged in as {{ user.email() }}</div>
+		<div class="middle-text">Your unique anagram count: <span style="color:#000;">{{ my_user.anagram_count }}</span> 
+		and words count: <span style="color:#000;">{{ my_user.words_count }}</span></div>	
+		<div class="logout-button"><a href="{{ url }}">Logout</a></div>			
+	</div>
+</div>
+<div class="menu">
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/add">Add New</a></li>
+		<li><a href="/upload" class="active">Upload Dictionary</a></li>
+	</ul>
+</div>
+<div class="main-container">
+ 
+    <table>
+        <form method="post" action="/upload">
+            <tr>
+                <td>
+				<input type="file" id="file" name="file" required/>
+				<label for="file" class="btn-1">Select file and upload</label>
+                </td>
+                
+            </tr>
+			<tr>
+				<td class="button_row">
+                    <input type="submit" class="upload-button" name="button" value="Upload"/>
+                </td>
+			</tr>
+        </form>
+    </table>
+
+</div>
+</body>
+
+</html>

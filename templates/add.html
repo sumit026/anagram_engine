@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Anagram Engine</title>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/styles.css"/>
+</head>
+
+<body>
+<div class="header">
+	<div class="left-box">
+		<div class="title">Anagram Engine</div>
+	</div>
+	<div class="right-box">
+		<div class="logout-upper-text">You are logged in as {{ user.email() }}</div>
+		<div class="middle-text">Your unique anagram count: <span style="color:#000;">{{ my_user.anagram_count }}</span> 
+		and words count: <span style="color:#000;">{{ my_user.words_count }}</span></div>	
+		<div class="logout-button"><a href="{{ url }}">Logout</a></div>		
+	</div>
+</div>
+<div class="menu">
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/add" class="active">Add New</a></li>
+		<li><a href="/upload">Upload Dictionary</a></li>
+	</ul>
+</div>
+<div class="main-container">
+	<div class="form-title">Add Anagram</div>
+    <table>
+        <form method="post" action="/add">
+            <tr>
+                <td>
+                    <input type="text" class="text-input" name="value" placeholder="Add a new word..." pattern="[a-z]{2,30}" required/>
+					<span class="validity"></span>
+                </td>
+                <td class="button_row">
+                    <input type="submit" class="button" name="button" value="Add"/>
+                </td>
+            </tr>
+        </form>
+    </table>
+    <br>
+    {% if anagrams %}
+        <table class="show-anagram">
+            <tr>
+                <th colspan="3">
+                    Your Anagrams:
+                </th>
+            </tr>
+            {% for anagram in anagrams %}
+                <tr>
+                        <td class="table-sortedWord">
+                            <b>{{ anagram.sorted_word }}</b>
+                        </td>
+                        <td class="table_data">
+                            {% for word in anagram.words %}
+                                {% if loop.index == anagram.words | length %}
+                                    {{ word }}
+                                {% else %}
+                                    {{ word }},
+                                {% endif %}
+                            {% endfor %}
+                        </td>
+						<td class="sub-anagram">
+							<a href="/subanagram?name={{ anagram.sorted_word }}" class="button_subanagram">SubAnagram</a>
+						</td>
+
+                </tr>
+            {% endfor %}
+            <tr></tr>
+        </table>
+    {% endif %}
+</div>
+</body>
+
+</html>

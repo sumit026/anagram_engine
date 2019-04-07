@@ -1,0 +1,317 @@
+body {
+background:#fff;
+font-family:sans-serif;
+}
+*{
+box-sizing:border-box
+}
+
+.login-container{
+margin:10% auto;
+}
+.login-header {
+background-color:#179ac1;
+text-align:center;
+font-size:25px;
+font-weight:bold;
+color:#fff;
+margin:auto;
+width:30%;
+overflow:hidden;
+border:0.5px solid #33b7de;
+padding:25px;
+top:0px;
+}
+
+.login-content{
+font-size:19px;
+background-color:#efefef;
+margin:auto;
+margin-top:2px;
+margin-bottom:2px;
+width:30%;
+padding:10px;
+min-height:27%;
+}
+
+.login-content .text{
+font-size:20px;
+text-align:center;
+margin:auto;
+width:50%;
+padding-top:50px;
+padding-bottom:50px;	
+}
+
+.login-button{
+color:#fff;
+font-size:20px;
+text-align:center;
+background-color:#0b4758;
+margin:auto;
+width:100%;
+padding:15px;
+cursor:pointer;
+}
+.login-button a:link{
+text-decoration:none;
+color:#fff;
+}
+
+.login-button a:visited{
+text-decoration:none;
+color:#fff;
+}
+
+.header {
+background-color:#179ac1;
+font-size:25px;
+font-weight:bold;
+color:#fff;
+margin:auto;
+width:65%;
+overflow:hidden;
+border:0.5px solid #33b7de;
+padding:10px;
+position:-webkit-sticky;
+position:sticky;
+top:0px;
+}
+
+.header .left-box{
+float:left;
+width:60%;
+text-align:left;	
+}
+
+.header .right-box{
+float:right;
+text-align:right;
+width:40%;	
+}
+
+.logout-upper-text {
+font-size:15px;
+margin-bottom:10px;
+width:100%;
+}
+.middle-text{
+font-size:15px;
+margin-bottom:10px;	
+}
+
+.logout-button{
+color:#fff;
+font-size:16px;
+text-align:center;
+background-color:#0b4758;
+margin-left:auto;
+width:55%;
+border:0.5px solid #33b7de;
+padding:12px;
+cursor:pointer;
+}
+.logout-button a:link{
+color:#fff;
+text-decoration:none;
+}
+.logout-button a:visited{
+color:#fff;
+text-decoration:none;
+}
+
+.menu{
+width:65%;
+height:auto;
+margin:auto;
+}
+
+.menu ul{
+list-style-type:none;
+margin:0;
+padding:0;
+overflow:hidden;
+background-color:#179ac1;
+}
+
+.menu ul li{
+float:left;
+}
+
+.menu ul li a{
+display:block;
+color:#fff;
+text-align:center;
+padding:14px 16px;
+text-decoration:none;
+}
+
+.menu ul li a:hover{
+background-color:#0b4758;
+}
+
+.menu ul li a.active{
+background-color:#0b4758;
+}
+
+.main-container{
+font-size:20px;
+background-color:#efefef;
+margin:auto;
+width:65%;
+padding:10px;
+min-height:80%;
+}
+
+.form-title{
+font-size:20px;
+color:#000;
+margin-bottom:15px;
+margin-top:20px;	
+}
+
+table{
+width:100%;	
+}
+
+.text-input {
+width: 90%;
+padding: 15px 5px;
+margin-top: 2px;
+font-size: 13px;
+box-sizing: border-box;
+float:left;
+}
+.validity{
+margin-left: 10px;
+float: left;
+box-sizing: border-box;
+position: inherit;
+margin-top: 5px;
+width: auto;
+font-size: 28px;
+}
+
+
+input:invalid+span:after {
+content: '✖';
+padding-left: 5px;
+color:red;
+}
+
+input:valid+span:after {
+content: '✓';
+padding-left: 5px;
+color:green;
+}
+
+.button_row {
+width:25%;
+}
+
+.button {
+background-color:#0b4758;
+color:#fff;
+padding:15px;
+text-align:center;
+font-size:16px;
+width:100%;
+float:right;
+cursor:pointer;
+border:0.5px solid #33b7de;
+}
+
+
+[type="file"] {
+height: 0;
+overflow: hidden;
+width: 0;
+float:left;
+}
+
+[type="file"] + label {
+background: #33b7de;
+border-radius: 5px;
+color: #fff;
+cursor: pointer;
+font-weight: 600;
+padding: 1rem 50px;
+position: relative;
+display: inline-block;
+margin-bottom: 10px;
+width: 30%;
+margin-top: 25px;
+margin-left: 30px;
+text-align:center;
+}
+
+.upload-button {
+background-color:#0b4758;
+color:#fff;
+padding:15px;
+text-align:center;
+font-size:16px;
+width:30%;
+float:left;
+cursor:pointer;
+border:0.5px solid #33b7de;
+margin-left:30px;
+border-radius: 5px;
+}
+
+.search{
+width:100%;	
+}
+
+.search tr{
+width:100%;
+}
+
+.search .searchTable {
+padding-left:10px;
+border-bottom: 1px solid #bbb;
+width:100%;
+float: left;
+}
+
+.show-anagram{
+width:100%;
+}
+
+.show-anagram tr{
+width:100%;	
+}
+
+.show-anagram .table-sortedWord{
+border-bottom: 1px solid #bbb;
+width: 18%;
+}
+
+.show-anagram .table_data{
+border-bottom: 1px solid #bbb;
+}
+
+.sub-anagram {
+width: 15%;
+border-bottom: 1px solid #bbb;
+}
+
+.sub-anagram a:link{
+color:#fff;
+}
+.sub-anagram a:visited{
+color:#fff;
+}
+
+.button_subanagram {
+background-color: #0b4758;
+border: none;
+color: white;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+width: 100%;
+cursor: pointer;
+}

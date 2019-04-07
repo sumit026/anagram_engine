@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Search Results - Anagram Engine</title>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/styles.css"/>
+</head>
+
+<body>
+<div class="header">
+	<div class="left-box">
+		<div class="title">Search Results</div>
+	</div>
+	<div class="right-box">
+		<div class="logout-upper-text">You are logged in as {{ user.email() }}</div>
+		<div class="middle-text">Your unique anagram count: <span style="color:#000;">{{ my_user.anagram_count }}</span> 
+		and words count: <span style="color:#000;">{{ my_user.words_count }}</span></div>	
+		<div class="logout-button"><a href="{{ url }}">Logout</a></div>			
+	</div>
+</div>
+<div class="menu">
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/add">Add New</a></li>
+		<li><a href="/upload">Upload Dictionary</a></li>
+	</ul>
+</div>
+<div class="main-container">
+ 
+            <table class="search">
+                <tr>
+                    <th>
+                        These are the anagrams of "{{ input_text }}":
+                    </th>
+                </tr>
+                {% for anagram in anagrams %}
+					{% if value == anagram.sorted_word %}
+						{% for word in anagram.words %}
+                                {% if loop.index == anagram.words | length %}
+								<tr>
+									<td class="searchTable">{{ word }}</td>                    
+                                {% else %}
+									<td class="searchTable"> {{ word }}</td> 
+								</tr>
+								{% endif %}
+						{% endfor %}
+						{% for subword in anagram.sub_anagram %}
+                                {% if loop.index == anagram.sub_anagram | length %}
+								<tr>
+									<td class="searchTable">{{ subword }}</td>                    
+                                {% else %}
+									<td class="searchTable"> {{ subword }}</td> 
+								</tr>
+								{% endif %}
+						{% endfor %}
+					{% endif %}
+                {% endfor %}
+            </table>
+
+</div>
+</body>
+
+</html>

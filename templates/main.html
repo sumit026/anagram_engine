@@ -1,0 +1,45 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Anagram Engine</title>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/styles.css"/>
+</head>
+
+<body>
+<div class="header">
+	<div class="left-box">
+		<div class="title">Anagram Engine</div>
+	</div>
+	<div class="right-box">
+		<div class="logout-upper-text">You are logged in as {{ user.email() }}</div>
+		<div class="middle-text">Your unique anagram count: <span style="color:#000;">{{ my_user.anagram_count }}</span> and words count: <span style="color:#000;">{{ my_user.words_count }}</span></div>
+		<div class="logout-button"><a href="{{ url }}">Logout</a></div>		
+	</div>
+</div>
+<div class="menu">
+	<ul>
+		<li><a href="/" class="active">Home</a></li>
+		<li><a href="/add">Add New</a></li>
+		<li><a href="/upload">Upload Dictionary</a></li>
+	</ul>
+</div>
+<div class="main-container">
+	<div class="form-title">Search for Anagram</div>
+    <table>
+        <form method="get" action="/search">
+            <tr>
+                <td>
+                    <input type="text" class="text-input" name="value" placeholder="Search for the Anagram of text..." pattern="[a-z]{2,30}" required>
+					<span class="validity"></span>
+                </td>
+                <td class="button_row">
+                    <input type="submit" class="button" name="button" value="Search the Anagram">
+                </td>
+            </tr>
+        </form>
+    </table>
+    
+</div>
+</body>
+
+</html>
